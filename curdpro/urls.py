@@ -15,7 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from curdapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('home/',views.home),
+    path('create/',views.create),
+    path('retrive/',views.retrive),
+    path('update/',views.update),
+    path('delete/',views.delete)
+
+
 ]

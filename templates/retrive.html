@@ -1,0 +1,66 @@
+{% load staticfiles %}
+<html>
+<head>
+    <title>Retriving</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-4 col-md-4">
+                <img src="{% static 'images\retrive.jpg' %}">
+                {% if retrive %}
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>PID</th>
+                                <th>PNAME</th>
+                                <th>PCOST</th>
+                                <th>PCOLOR</th>
+                                <th>PCLASS</th>
+                                <th>Cname</th>
+                                <th>Cmobile</th>
+                                <th>Cemail</th>
+                            </tr>
+                        </thead>
+                        {% for i in retrive %}
+                            <tbody>
+                                <tr>
+                                    <td>{{ i.pid }}</td>
+                                    <td>{{ i.pname }}</td>
+                                    <td>{{ i.pcost }}</td>
+                                    <td>{{ i.pcolor }}</td>
+                                    <td>{{ i.pclass }}</td>
+                                    <td>{{ i.cname }}</td>
+                                    <td>{{ i.cmob }}</td>
+                                    <td>{{ i.cemail }}</td>
+
+
+
+
+
+
+
+
+                                </tr>
+
+                            </tbody>
+                        {% endfor %}
+                    </table>
+                    {% else %}
+                        <h1>No Data To Display</h1>
+                {% endif %}
+                    <a href="/create/">CREATE</a>
+                    <a href="/home/">HOME</a>
+                    <a href="/update/">UPDATE</a>
+                    <a href="/delete/">DELETE</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
